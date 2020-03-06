@@ -46,14 +46,17 @@ router.get('/', (req, res) => {
 });
 
 //post
-router.post('/', (req, res) => {
-	var filename = req.file.filename;
+router.post('/', upload.single('img'), function(req, res, next){
+
+
+    var filename1 = req.file.filename;
+
     var data = {
         
         
         u_id:req.session.user_id,
         username: req.session.user_name,
-        filename: req.file.filename
+        filename: filename1
         
         
 

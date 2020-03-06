@@ -13,7 +13,7 @@ router.get('*', function (req, res, next) {
 //get
 
 router.get('/', (req, res) => {
-    userModel.getAllReservation((results) => {
+    userModel.getReservation((results) => {
         var data = {
             fx_info: results,
             u_type: req.session.u_type,

@@ -236,6 +236,16 @@ module.exports = {
         });
     },
 
+getReservation: function (userId, callback) {
+        var sql = "select * from reservation_details where id= ?";
+        db.getResults(sql, [userId], function (result) {
+            if (result.length > 0) {
+                callback(result[0]);
+            } else {
+                callback([]);
+            }
+        });
+    },
 
 
 
