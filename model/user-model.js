@@ -316,9 +316,12 @@ getAllReservation: function(callback) {
 
     
 
+
+
+
     insertPic: function(data, callback) {
-        var sql = "insert into pic values(?,?,?)";
-        db.execute(sql, [
+        var sql = "insert into pic values(?,?,?,?)";
+        db.execute(sql, ["",
             data.u_id,
             
             data.username,
@@ -340,7 +343,7 @@ getAllReservation: function(callback) {
 
 
     deletePic: function(id, callback) {
-        var sql = "delete from pic where f_id=?";
+        var sql = "delete from pic where p_id=?";
         db.execute(sql, [id], function(status) {
             if (status) {
                 callback(true);
