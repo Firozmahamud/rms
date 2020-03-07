@@ -4,6 +4,7 @@ var bcrypt = require("bcrypt");
 var router = express.Router();
 
 //ROUTES
+
 router.get('/', (req, res) => {
     var error = {
         errors: req.session.errors,
@@ -61,14 +62,8 @@ router.post('/', (req, res) => {
                 {
                     if (req.session.u_type == "admin") {
                         res.redirect('/home-admin');
-                    } else{
+                    } else if(req.session.u_type == "member")
                         res.redirect('/home-member');
-                    }
-                        
-                }
-                else {
-                    req.session.success = "Invalid User";
-                    res.redirect('/login');
                 }
                 /*if (req.session.u_type == "admin") {
                     res.redirect('/home-admin');
