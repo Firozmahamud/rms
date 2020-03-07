@@ -9,6 +9,8 @@ router.post('/', (req, res) => {
 
     var err = req.validationErrors();
 
+    
+
     if (!err) {
         req.session.errors = null;
         var user = {
