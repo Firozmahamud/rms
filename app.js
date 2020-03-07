@@ -12,6 +12,7 @@ var menu = require('./controllers/menu');
 var reservation = require('./controllers/reservation');
 var pic = require('./controllers/pic');
 var contact = require('./controllers/contact');
+var about = require('./controllers/about');
 var bcrypt = require("bcrypt");
 
 var ejs = require('ejs');
@@ -44,6 +45,7 @@ app.use('/menu', menu);
 app.use('/reservation', reservation);
 app.use('/pic', pic);
 app.use('/contact', contact);
+app.use('/about', about);
 //route
 app.get('/', (req, res) => {
     var err = {
