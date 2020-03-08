@@ -249,6 +249,25 @@ module.exports = {
 
 
 
+ 
+
+
+getReservation: function (userId, callback) {
+        var sql = "select * from reservation_details where f_id= ?";
+        db.getResults(sql, [userId], function (result) {
+            if (result.length > 0) {
+                callback(result[0]);
+            } else {
+                callback([]);
+            }
+        });
+    },
+
+
+
+
+
+
 getAllReservation: function(callback) {
         var sql = "select * from reservation_details";
         db.getResults(sql, [], function(results) {

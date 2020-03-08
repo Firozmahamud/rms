@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Blank Page customer</title>
+    <title>customer</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
@@ -89,8 +89,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <table class="table table-bordered">
-                            <% if(fx_info.length != 0){%>
-                            <%for(var i=0;i< fx_info.length; i++){%>
+                            <% if(r_info.length != 0){%>
+                            <%for(var i=0;i< r_info.length; i++){%>
                             <tr>
                                 <td>
                                     <div id="first<%=i%>" class='panel panel-info'>
@@ -101,9 +101,9 @@
                                                 
                                                 </strong></h4>
                                             <h5>your reservation has been done in<strong>
-                                                    <%= fx_info[i].date%></strong> at
+                                                    <%= r_info[i].date%></strong> at
                                                 <strong>
-                                                    <%= fx_info[i].time%>
+                                                    <%= r_info[i].time%>
                                                 </strong>
                                             </h5>
                                             <h5>thank you
@@ -112,14 +112,14 @@
                                                 
                                                 </strong> </h5>
                                             <p class='text-primary' style='margin-left:5px;font-size:20px;'>
-                                                <%= fx_info[i].user_email%>
+                                                <%= r_info[i].user_email%>
                                             </p>
                                         </div>
                                         <%if(u_type == 'member'){%>
                                         <a class="btn btn-danger pull-right"
 
                                         
-                                            href="/reservation/delete/<%= fx_info[i].f_id %>"> cancel</a>
+                                            href="/reservation/delete/<%= r_info[i].f_id %>"> cancel</a>
                                     </div>
                                     <%}}}else{%>
                                     <h2>Nothing to show</h2>
@@ -153,7 +153,7 @@
                                                         <div class="form-group">
                                                         <label for="">enter date</label>
                                                             
-                                                            <input type="text"style="color:black " class="form-control" name="date"
+                                                            <input type="date"style="color:black " class="form-control" name="date"
                                                                 placeholder="" required>
                                                         </div>
 
@@ -173,9 +173,11 @@
 
                                                         <div class="form-group">
                                                         <label for="">enter phone no:</label>
-                                                            <textarea name="p_no" class="form-control" rows="3"
+                                                            <!-- <textarea name="p_no" class="form-control" rows="3"
                                                                 placeholder=""
-                                                                required></textarea>
+                                                                required></textarea> -->
+                                                                <input type="text"style="color:black " class="form-control" name="p_no"
+                                                                placeholder="" required>
 
                                                         </div>
 

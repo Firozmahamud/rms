@@ -12,10 +12,27 @@ router.get('*', function (req, res, next) {
 
 //get
 
+
+// router.get('/', (req, res) => {
+//     userModel.getReservation(req.session.user_id, (result) => {
+//         var data = {
+//             r_info: result,
+//             u_type: req.session.u_type,
+//             username: req.session.user_name,
+//             user_email: req.session.user_email,
+//             u_id:req.session.user_id,
+
+//             staus:req.session.staus,
+//         };
+//         res.render('reservation', data);
+//     });
+// });
+
+
 router.get('/', (req, res) => {
     userModel.getAllReservation((results) => {
         var data = {
-            fx_info: results,
+            r_info: results,
             u_type: req.session.u_type,
             username: req.session.user_name,
             user_email: req.session.user_email,
